@@ -8,6 +8,9 @@ class Substream(io.RawIOBase):
         self.size = size
         self.position = 0
 
+    def seekable(self):
+        return True
+
     def seek(self, offset, origin=0):
         if origin == 0:
             self.position = offset
